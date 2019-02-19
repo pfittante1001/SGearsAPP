@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
 import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './Nav/Nav.component';
+import { CardDeckComponent } from './CardDeck/CardDeck.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
    declarations: [
       AppComponent,
-      CustomerComponent
+      CustomerComponent,
+      NavComponent,
+      CardDeckComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
-      HttpClientModule
+      HttpClientModule,
+      FormsModule
    ],
    providers: [],
    bootstrap: [
