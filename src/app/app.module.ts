@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './Nav/Nav.component';
 import { CardDeckComponent } from './CardDeck/CardDeck.component';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from './_Service/Auth.service';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { FormsModule } from '@angular/forms';
       HttpClientModule,
       FormsModule
    ],
-   providers: [],
+   providers: [AuthService],
    bootstrap: [
       AppComponent
    ]
