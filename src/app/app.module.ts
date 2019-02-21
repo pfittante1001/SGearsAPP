@@ -7,9 +7,10 @@ import { CustomerComponent } from './customer/customer.component';
 import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './Nav/Nav.component';
-import { CardDeckComponent } from './CardDeck/CardDeck.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './_Service/Auth.service';
+import { HomeComponent } from './Home/Home.component';
+import { RegisterComponent } from './Register/Register.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AuthService } from './_Service/Auth.service';
       AppComponent,
       CustomerComponent,
       NavComponent,
-      CardDeckComponent
+      HomeComponent,
+      RegisterComponent
    ],
    imports: [
       BrowserModule,
@@ -25,7 +27,9 @@ import { AuthService } from './_Service/Auth.service';
       HttpClientModule,
       FormsModule
    ],
-   providers: [AuthService],
+   providers: [
+      AuthService
+   ],
    bootstrap: [
       AppComponent
    ]
