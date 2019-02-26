@@ -10,6 +10,12 @@
     <input type="password" class="form-control" required name='password' [(ngModel)]="model.password" placeholder="Password">
   </div>
 
+  <!-- example pass value from parent to child -->
+<!-- <div class="form-group">
+  <label for="favoriteCustomer">Who is you favorite customer</label>
+  <select class="form-control" id="favoriteCustomer">
+    <option *ngFor="let customer of customersFromHome" [value]="customer">{{customer.firstName}}</option>
+</div></select> -->
   <div class="form-group text-center">
     <button class="btn btn-success" type="submit">Register</button>
     <button class="btn btn-default" type="button" (click)='cancel()' >Cancel</button>
