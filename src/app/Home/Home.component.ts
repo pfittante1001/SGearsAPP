@@ -9,24 +9,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
   registerMode = false;
-  customers: any;
+  // customers: any; This was used to demonstrate parent child information passing
 
   constructor(private http: HttpClient) { }
 
    ngOnInit() {
-    this.getCustomers();
+    // this.getCustomers(); This was used to demonstrate parent child information passing
   }
 
   registerToggle() {
     this.registerMode = true;
   }
-  getCustomers() {
-    this.http.get('http://localhost:5000/api/customers').subscribe(response => {
-      this.customers = response;
-    }, error => {
-      console.log(error);
-    });
-  }
+  // This was used to demonstrate parent child information passing
+  // getCustomers() {
+  //   this.http.get('http://localhost:5000/api/customers').subscribe(response => {
+  //     this.customers = response;
+  //   }, error => {
+  //     console.log(error);
+  //   });
+  // }
 
   cancelRegisterMode(registerMode: boolean) {
     this.registerMode = registerMode;

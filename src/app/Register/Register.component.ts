@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {AuthService} from '../_Service/Auth.service';
 
 @Component({
 // tslint:disable-next-line: component-selector
@@ -7,16 +8,20 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./Register.component.css']
 })
 export class RegisterComponent implements OnInit {
-@Input() customersFromHome: any;
+// @Input() customersFromHome: any; Used to deomonstrate passing information from parent to child
 @Output() cancelRegister = new EventEmitter();
   model: any = {};
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
   }
 
   register() {
-    console.log(this.model);
+    this.authService.register(this.model).subscribe(() => {
+    console.log('registration successful');
+    }, error => {
+      console.log(error);
+    });
   }
 
   cancel() {
